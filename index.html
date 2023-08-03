@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link rel="stylesheet" href="/presupuesto.css">
+    <script src="/html12pdf.js"></script>
+</head>
+<body>
+    
+    
+
+<body>
+  <h1>Sistema de Presupuestos</h1>
+
+  <div class="form">
+    <label for="cliente">Cliente:</label>
+    <input type="text" id="cliente" placeholder="Nombre del cliente">
+
+    <label for="producto">Producto:</label>
+    <input type="text" id="producto" placeholder="Nombre del producto">
+
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" placeholder="Precio del producto">
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" placeholder="Cantidad">
+
+    <label for="metodoPago">Método de Pago:</label>
+    <select id="metodoPago">
+      <option value="efectivo">Efectivo</option>
+      <option value="transferencia">Transferencia (10% de recargo)</option>
+      <option value="tarjeta">Tarjeta (25% de recargo)</option>
+      <option value="cuotas">Tarjeta (3 cuotas, 25% de recargo)</option>
+    </select>
+
+    <button onclick="agregarProducto()">Agregar Producto</button>
+    <button class="nuevo-presupuesto-btn" onclick="nuevoPresupuesto()">Nuevo Presupuesto</button>
+  </div>
+
+  <div class="productos">
+    <h2>Productos Agregados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Producto</th>
+          <th>Precio Unitario</th>
+          <th>Cantidad</th>
+          <th>Precio Final</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="listaProductos"></tbody>
+    </table>
+  </div>
+
+  <div class="totales">
+    <h2>Totales</h2>
+    <p class="total">Total en efectivo: <span id="totalEfectivo">$0.00</span></p>
+    <p class="total">Total por transferencia: <span id="totalTransferencia">$0.00</span></p>
+  </div>
+  <script src="/presupuesto.js"></script>
+</body>
+</html>
