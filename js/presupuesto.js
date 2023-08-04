@@ -72,7 +72,9 @@ function actualizarPresupuesto() {
 
     if (producto.metodoPago === "efectivo") {
       totalEfectivo += producto.totalConRecargo;
-    } else {
+    }
+    
+    else {
       totalTransferencia += producto.totalConRecargo;
     }
   });
@@ -112,49 +114,12 @@ function eliminarProducto(index) {
   actualizarPresupuesto();
 }
 
+
 function nuevoPresupuesto() {
-  const clienteFinal = document.getElementById("clienteFinal");
-  clienteFinal.textContent = "";
-
-  const metodoPagoFinal = document.getElementById("metodoPagoFinal");
-  metodoPagoFinal.textContent = "";
-
-  const listaProductos = document.getElementById("listaProductos");
-  listaProductos.innerHTML = "";
-
-  const totalEfectivoElement = document.getElementById("totalEfectivo");
-  totalEfectivoElement.textContent = "$0.00";
-
-  const totalTransferenciaElement = document.getElementById("totalTransferencia");
-  totalTransferenciaElement.textContent = "$0.00";
-
-  presupuestoActual = {
-    cliente: "",
-    metodoPago: "",
-    productos: [],
-    totalEfectivo: 0,
-    totalTransferencia: 0,
-    totalPresupuesto: 0,
-  };
+  // Recargar la página para reiniciar todo
+  location.reload();
 }
-
 function formatoMiles(numero) {
   return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
-
-function descargarPresupuesto() {
-  const presupuestoHTML = document.querySelector(".presupuesto").outerHTML;
-  const filename = "presupuesto.html";
-
-  const blob = new Blob([presupuestoHTML], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-
-  URL.revokeObjectURL(url);
-}
-
 actualizarPresupuesto();
