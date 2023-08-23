@@ -175,4 +175,46 @@ th {
 h5 {
   margin-top: -10px;
   color: red;
+}
+
+@media (max-width: 576px) {
+  .form label,
+  .form input,
+  .form select,
+  .form button {
+    padding: 8px;
+  }
+  .productos h2,
+  .totales h2 {
+    font-size: 20px;
+  }
+  .total {
+    font-size: 16px;
+  }
+  .total-presupuesto {
+    font-size: 18px;
+  }
+  #detalleProductos li {
+    font-size: 14px;
+  }
+  .descargar-btn {
+    padding: 8px;
+    margin-top: 15px;
+    padding: 8px;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .columna-celu {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  th,
+  td {
+    white-space: nowrap;
+  }
 }/*# sourceMappingURL=presupuesto.css.map */
