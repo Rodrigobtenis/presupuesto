@@ -184,8 +184,12 @@ function agregarProducto() {
   actualizarPresupuesto();
   guardarPresupuestos();
   limpiarCampos();
-}
 
+  Swal.fire('Agregaste un producto nuevo!');
+  setTimeout(function() {
+    Swal.close(); // Cierra la ventana emergente SweetAlert
+  }, 600);
+}
 function actualizarPresupuesto() {
   const listaProductos = document.getElementById("listaProductos");
   listaProductos.innerHTML = "";
@@ -261,6 +265,9 @@ function nuevoPresupuesto() {
 function formatoMiles(numero) {
   return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+
+
 
 cargarPresupuestos();
 actualizarPresupuesto();

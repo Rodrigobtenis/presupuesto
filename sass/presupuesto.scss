@@ -235,3 +235,13 @@ h5{
       white-space: nowrap; // Evitar el salto de línea en las celdas
     }
   }
+
+  #descargarPDF {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }

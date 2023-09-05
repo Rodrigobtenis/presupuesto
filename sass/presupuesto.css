@@ -217,4 +217,13 @@ h5 {
   td {
     white-space: nowrap;
   }
+}
+#descargarPDF {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
 }/*# sourceMappingURL=presupuesto.css.map */
