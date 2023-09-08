@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto</title>
     <link rel="stylesheet" href="./sass/presupuesto.css">
-    <script src="/html12pdf.js"></script>
+    
 </head>
 <body>
     
@@ -13,6 +13,8 @@
 
 <body>
   <h1>Sistema de Presupuestos</h1>
+
+  
 
   <div class="form">
     <label for="cliente">Cliente:</label>
@@ -31,8 +33,8 @@
     <select id="metodoPago">
       <option value="efectivo">Efectivo</option>
       <option value="transferencia">Transferencia (10% de recargo)</option>
-      <option value="tarjeta">Tarjeta (25% de recargo)</option>
-      <option value="cuotas">Tarjeta (3 cuotas, 25% de recargo)</option>
+      <option value="tarjeta">Tarjeta (30% de recargo)</option>
+      <option value="cuotas">Bitcoin</option>
     </select>
 
     <button onclick="agregarProducto()">Agregar Producto</button>
@@ -60,11 +62,46 @@
   <div class="totales">
     <h2>Totales</h2>
     <p class="total">Total en efectivo: <span id="totalEfectivo">$0.00</span></p>
-    <p class="total">Total por transferencia: <span id="totalTransferencia">$0.00</span></p>
+    <p class="total">Total por transferencia: <span id="totalTransferencia">$0.00</span></p><p class="total">Bitcoin: <span id="totalTransferencia">$0.00</span></p>
   </div>
 
-  <a href="./carpetaPDF/test.pdf" download="nombre-del-archivo.pdf">Descargar PDF</a
->  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   
+  <a href="./carpetaPDF/test.pdf" download="nombre-del-archivo.pdf">Descargar PDF</a>
+
+<br><br>
+
+  
+  
+  <section class="main-section">
+    <h2>Cotizador de Criptomonedas</h2>
+    <div class="container">
+        <div class="image-side"></div>
+        <div class="form-side">
+            <form action="" id="form-search">
+                <select id="moneda" name="moneda">
+                    <option value="">Elige tu moneda</option>
+                    <option value="USD">Dolar Estadounidense</option>
+                    <option value="MXN">Peso Mexicano</option>
+                    <option value="GBP">Libras</option>
+                    <option value="EUR">Euros</option>
+                </select>
+
+                <select id="criptomonedas" name="criptomoneda">
+                    <option value="" >Elige tu criptomoneda</option>
+                </select>
+
+                <input class="" type="submit" value="Cotizar" />
+                <div class="container-answer"></div>
+                
+            </form>
+        </div>
+    </div>
+    
+
+</section>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/presupuesto.js"></script>
+  <script src="./js/cripto.js"></script>
 </body>
 </html>
