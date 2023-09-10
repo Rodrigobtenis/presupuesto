@@ -136,8 +136,11 @@ function eliminarProducto(index) {
 }
 
 function nuevoPresupuesto() {
-  // Recargar la página para reiniciar todo
-  location.reload();
+  // Mostrar el mensaje antes de recargar la página
+  Swal.fire('Hora de hacer un nuevo presupuesto!').then(() => {
+    // Recargar la página para reiniciar todo después de que el usuario confirme el mensaje
+    location.reload();
+  });
 }
 
 function formatoMiles(numero) {
