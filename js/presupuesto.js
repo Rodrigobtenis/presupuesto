@@ -12,7 +12,7 @@ let presupuestoActual = {
 function cargarPresupuestosDesdeLocalStorage() {
   const presupuestosGuardados = localStorage.getItem("presupuestos");
   if (presupuestosGuardados) {
-      presupuestos = JSON.parse(presupuestosGuardados);
+      presupuestoActual = JSON.parse(presupuestosGuardados);
   }
 }
 
@@ -53,7 +53,7 @@ function agregarProducto() {
   presupuestoActual.productos.push(productoAgregado);
   actualizarPresupuesto();
   limpiarCampos();
-  guardarPresupuestosEnLocalStorage();
+  localStorage.setItem("presupuestos" , JSON.stringify(presupuestoActual));
 
   Swal.fire('Agregaste un producto nuevo!');
   setTimeout(function() {
